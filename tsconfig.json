@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "noImplicitAny": true,
+      "target": "es5",
+      "experimentalDecorators": true,
+      "outDir": "build"
+    },
+    "include": [
+      "source"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+}
+  
