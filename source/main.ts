@@ -1,5 +1,5 @@
 import { Transaction } from './transaction/index';
-import { Scenario } from './validation/index';
+import { Scenario } from './interface/index';
 
 const scenario: Scenario[] = [
     {

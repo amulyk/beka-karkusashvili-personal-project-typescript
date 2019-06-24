@@ -1,15 +1,4 @@
-import { Scenario } from '../validation/index';
-
-interface Log {
-    index: number,
-    meta: {
-        title: string,
-        description: string
-    }
-    storeBefore?: {},
-    storeAfter?: {},
-    error?: null | { name:string, message:string, stack:string }
-}
+import { Scenario, Log } from '../interface/index';
 
 export class Transaction {
 
