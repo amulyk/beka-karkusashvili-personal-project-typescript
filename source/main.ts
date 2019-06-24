@@ -1,6 +1,7 @@
-import { Transaction } from './transaction';
+import { Transaction } from './transaction/index';
+import { Scenario } from './validation/index';
 
-const scenario = [
+const scenario: Scenario[] = [
     {
         index: 1,
         meta: {
@@ -28,6 +29,6 @@ const transaction = new Transaction();
     }
 })();
 
-function sleep(ms) {
+function sleep(ms:number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }

@@ -1,10 +1,6 @@
-import { Scenario } from '../validation/';
+import { Scenario } from '../validation/index';
 
-export interface Trans {
-    // readonly logs:Logs[],
-}
-
-interface Logs {
+interface Log {
     index: number,
     meta: {
         title: string,
@@ -15,24 +11,12 @@ interface Logs {
     error?: null | { name:string, message:string, stack:string }
 }
 
-class test implements Trans {
-    readonly logs: Logs[] = [];
-    logs.push({
-        index: 1,
-        meta: {
-            title: 'string',
-            description: 'string'
-        }
-    })
-}
-
-
 export class Transaction {
 
-    public logs: [] = [];
-    public store: {} = {};
+    readonly logs:Log[];
+    public store:{};
 
-    public async dispatch(scenario) {
+    public async dispatch(scenario: Scenario[]) {
 
         scenario.forEach(item => {
             const { index } = item;
@@ -50,7 +34,7 @@ export class Transaction {
         for (const step of steps) {
             const { index, meta, call, silent } = step;
             
-            const log = { index, meta };
+            const log: Log = { index, meta };
             const storeBefore = {...this.store};
             
             try {
