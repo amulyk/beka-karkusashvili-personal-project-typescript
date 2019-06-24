@@ -6,5 +6,5 @@ export interface Log {
     }
     storeBefore?: {},
     storeAfter?: {},
-    error?: null | { name:string, message:string, stack:string }
+    error: null | { name:string, message:string, stack:string }
 }

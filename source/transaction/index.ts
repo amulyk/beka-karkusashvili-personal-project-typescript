@@ -23,14 +23,13 @@ export class Transaction {
         for (const step of steps) {
             const { index, meta, call, silent } = step;
             
-            const log: Log = { index, meta };
+            const log: Log = { index, meta, error: null };
             const storeBefore = {...this.store};
             
             try {
                 await call(this.store);
                 log.storeBefore = storeBefore;
                 log.storeAfter = {...this.store};
-                log.error = null;
             } catch ({name, message, stack}) {
                 log.error = { name, message, stack };
                 
