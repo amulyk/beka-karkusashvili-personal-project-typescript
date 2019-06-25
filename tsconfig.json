@@ -1,15 +1,16 @@
 {
-    "compilerOptions": {
-      "noImplicitAny": true,
-      "target": "es2015",
-      "experimentalDecorators": true,
-      "outDir": "build"
-    },
-    "include": [
-      "source"
-    ],
-    "exclude": [
-      "node_modules"
-    ]
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "target": "es5",
+    "lib": ["es2015", "dom"],
+    "experimentalDecorators": true,
+    "outDir": "build"
+  },
+  "include": [
+    "source/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
-  

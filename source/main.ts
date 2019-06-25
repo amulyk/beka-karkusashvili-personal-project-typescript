@@ -1,23 +1,21 @@
-import { Transaction } from './transaction/index';
-import { Scenario } from './interface/index';
+import { Scenario } from "./interface/index";
+import { Transaction } from "./transaction/index";
 
 const scenario: Scenario[] = [
     {
+        call: async (store) => { const fixLint = true; },
         index: 1,
         meta: {
-            title: 'Title 1',
-            description: 'This action is responsible for reading the most popular customers'
+            description: "This action is responsible for reading the most popular customers",
+            title: "Title 1",
         },
-        call: async (store) => {
-            store.surname = 'Jon'
-        },
-        restore: async () => {}
-    }
+        restore: async () => { const fixLint = true; },
+    },
 ];
 
 const transaction = new Transaction();
 
-(async() => {
+(async () => {
     try {
         await transaction.dispatch(scenario);
         const store = transaction.store; // {} | null
@@ -29,6 +27,7 @@ const transaction = new Transaction();
     }
 })();
 
-function sleep(ms:number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+function sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+
 }
