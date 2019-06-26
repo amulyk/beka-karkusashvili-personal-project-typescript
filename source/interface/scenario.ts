@@ -4,7 +4,7 @@ export interface Scenario {
         title: string;
         description: string
     };
-    call: <T>(store: T ) => void;
+    call: (store: {}) => void;
     restore?: () => void;
     silent?: boolean;
 }

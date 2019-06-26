@@ -3,7 +3,9 @@ import { Transaction } from "./transaction/index";
 
 const scenario: Scenario[] = [
     {
-        call: async (store) => { const fixLint = true; },
+        call: async (store) => {
+            store = 10;
+         },
         index: 1,
         meta: {
             description: "This action is responsible for reading the most popular customers",
@@ -13,7 +15,7 @@ const scenario: Scenario[] = [
     },
 ];
 
-const transaction = new Transaction();
+const transaction = new Transaction<number>();
 
 (async () => {
     try {

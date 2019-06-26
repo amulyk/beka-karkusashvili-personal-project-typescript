@@ -1,17 +1,12 @@
+import { logs } from "../decorators/index";
 import { Log, Scenario } from "../interface/index";
 
-const logs = <T extends {new(...args: any[]): {}}>(constructor: T) => {
-    return class extends constructor {
-        private logs: Log[];
-    };
-};
-
 @logs
-export class Transaction {
+export class Transaction<T> {
 
     public logs: Log[];
 
-    public store: {[key: string]: object } | null;
+    public store: T | null;
 
     public async dispatch(scenario: Scenario[]) {
 
